@@ -13,7 +13,7 @@ jobs:
     
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         
         
       - name: Login to Docker Hub
@@ -25,13 +25,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build and push
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          file: ./docker-compose.yml
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/students_registration_system:latest
+      - name: Build and run docker-compose
+        run: |
+          docker-compose up -d
 
       - name: Run docker compose (Test)
         uses: isbang/compose-action@v1.4.1
@@ -46,4 +42,4 @@ jobs:
       - name: Run Test in student-statistics-process service
         run: |
           docker exec -it students_registration_system-student-statistics-process-1 bash
-          java Main  
+          java Main
