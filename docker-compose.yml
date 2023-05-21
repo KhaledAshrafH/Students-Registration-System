@@ -18,4 +18,5 @@ services:
     tty: true
 
 
-# Note:- Volumes Comment to pull image with shared mounted folder without any problem related with fixed local folder path
+# Note:- Volumes Commented,
+#     to pull image from my dockerHub with shared mounted folder without any problem related with fixed local folder path
