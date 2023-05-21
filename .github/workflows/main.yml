@@ -1,4 +1,4 @@
-name: ci
+name: ci/cd
 on:
   push:
     branches:
@@ -23,3 +23,12 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{5aleda4rf}}/${{students_registration_system}}:latest
+      - name: Create deployment
+        uses: octokit/request-action@v2.x
+        with:
+          route: POST /repos/${{ github.repository }}/deployments
+          ref: ${{ github.sha }}
+          environment: production
+          production_environment: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
