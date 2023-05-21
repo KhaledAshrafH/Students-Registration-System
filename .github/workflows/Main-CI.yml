@@ -41,5 +41,5 @@ jobs:
           distribution: 'temurin'
       - name: Run java code
         run: |
-          javac src/Main.java
-          java Main
+          run Main.java
+          java Main.java
