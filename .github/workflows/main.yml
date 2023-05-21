@@ -31,10 +31,10 @@ jobs:
 
       - name: Run Test in registeration-process service
         run: |
-          docker exec -it students_registration_system_registeration-process_1 bash
+          docker exec -it students_registration_system_registeration-process_1 -t bash
           java Main   
           
       - name: Run Test in student-statistics-process service
         run: |
-          docker exec -it students_registration_system_student-statistics-process_1 bash
+          docker exec -it students_registration_system_student-statistics-process_1 -t bash
           java Main
