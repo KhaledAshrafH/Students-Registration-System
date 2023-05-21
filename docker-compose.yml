@@ -16,5 +16,8 @@ services:
       - "81:81"
     stdin_open: true
     tty: true
+    
+volumes:
+    C:\Users\5aleda4rf\IdeaProjects\students_registration_system\app\data\batch:
 
 
