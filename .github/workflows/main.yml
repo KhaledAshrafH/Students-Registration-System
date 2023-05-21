@@ -25,9 +25,9 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build and push
+      - name: Build and run docker-compose
         run: |
-          docker buildx bake -f ./docker-compose.yml default --push
+          docker-compose up -d
 
       - name: Run docker compose (Test)
         uses: isbang/compose-action@v1.4.1
