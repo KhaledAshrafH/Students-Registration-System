@@ -3,7 +3,7 @@ services:
   student-statistics-process:
     image: 5aleda4rf/student-statistics-process
     volumes:
-      - ./app/data/batch:/app/data/batch
+      - C:/Users/5aleda4rf/IdeaProjects/students_registration_system/app/data/batch:/app/data/batch
     ports:
       - "80:80"
     stdin_open: true
@@ -11,12 +11,10 @@ services:
   registeration-process:
     image: 5aleda4rf/registeration-process
     volumes:
-      - ./app/data/batch:/app/data/batch
+      - C:/Users/5aleda4rf/IdeaProjects/students_registration_system/app/data/batch:/app/data/batch
     ports:
       - "81:81"
     stdin_open: true
     tty: true
 
 
-volumes:
-  ./app/data/batch:
