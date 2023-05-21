@@ -87,7 +87,7 @@ public class Main {
                 System.out.println("System closed Successfully.");
                 break;
             } else {
-                System.out.println("This number not valid .. Enter correct number!");
+                System.out.println("This number not valid ... Enter correct number!");
             }
         }
         List<String> list = new CSVFileHelper().readLinesFromCSVFile(filePathStr);
