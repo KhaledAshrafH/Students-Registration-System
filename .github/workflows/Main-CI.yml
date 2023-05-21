@@ -40,6 +40,6 @@ jobs:
           java-version: '19'
           distribution: 'temurin'
       - name: Run java code
-        uses: actions/script@v0.1.0
-        with:
-          script: java Main
+        run: |
+          javac Main.java
+          java Main
