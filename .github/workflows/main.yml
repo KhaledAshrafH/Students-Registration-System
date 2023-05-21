@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and push
         run: |
-          docker buildx bake -f ./docker-compose.yml web db --push --tag ${{ secrets.DOCKERHUB_USERNAME }}/students_registration_system:latest
+          docker buildx bake -f ./docker-compose.yml 5aleda4rf/student-statistics-process 5aleda4rf/registeration-process --push
 
       - name: Run docker compose (Test)
         uses: isbang/compose-action@v1.4.1
