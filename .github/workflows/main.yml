@@ -29,11 +29,6 @@ jobs:
         run: |
           docker-compose up -d
 
-      - name: Run docker compose (Test)
-        uses: isbang/compose-action@v1.4.1
-        with:
-          compose-file: ./docker-compose.yml
-          services: 5aleda4rf/student-statistics-process 5aleda4rf/registeration-process
       - name: Run Test in registeration-process service
         run: |
           docker exec -it students_registration_system-registeration-process-1 bash
