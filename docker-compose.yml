@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   student-statistics-process:
     image: 5aleda4rf/student-statistics-process
@@ -16,5 +15,3 @@ services:
       - "81:81"
     stdin_open: true
     tty: true
-
-
