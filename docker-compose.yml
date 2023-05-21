@@ -1,8 +1,10 @@
-# test failed ci
+# test success ci
 
 version: "3.9"
 services:
   student-statistics-process:
+    image: 5aleda4rf/student-statistics-process
+
     #    volumes:
     #      - C:/Users/5aleda4rf/IdeaProjects/students_registration_system/app/data/batch:/app/data/batch
 
