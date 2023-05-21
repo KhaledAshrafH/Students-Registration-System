@@ -33,5 +33,4 @@ jobs:
       - name: Build and run docker-compose
         run: |
           docker-compose up -d
-          
 
