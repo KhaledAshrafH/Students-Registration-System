@@ -1,7 +1,6 @@
 version: "3.9"
 services:
   student-statistics-process:
-    build: .
     image: 5aleda4rf/student-statistics-process
     volumes:
       - C:\Users\5aleda4rf\IdeaProjects\students_registration_system\app\data\batch:/app/data/batch
@@ -10,7 +9,6 @@ services:
     stdin_open: true
     tty: true
   registeration-process:
-    build: .
     image: 5aleda4rf/registeration-process
     volumes:
       - C:\Users\5aleda4rf\IdeaProjects\students_registration_system\app\data\batch:/app/data/batch
