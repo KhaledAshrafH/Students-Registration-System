@@ -29,6 +29,8 @@ jobs:
       - name: Build and run docker-image with the Dockerfile
         run: |
           docker build --tag registeration-process:v2.0 .
+          docker run -it registeration-process:v2.0
+          docker exec -it registeration-process:v2.0 3
           
       - name: Build and run docker-compose
         run: |
