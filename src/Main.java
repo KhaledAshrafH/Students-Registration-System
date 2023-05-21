@@ -12,16 +12,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Main {
     public static class CSVFileHelper {
         public List<String> readLinesFromCSVFile(String path) throws IOException {
             Path filePath = Paths.get(path);
             List<String> results = new ArrayList<>();
 
-            try(BufferedReader buffer = Files.newBufferedReader(filePath, Charset.defaultCharset())){
+            try (BufferedReader buffer = Files.newBufferedReader(filePath, Charset.defaultCharset())) {
                 String line = "";
-                while((line = buffer.readLine()) != null){
+                while ((line = buffer.readLine()) != null) {
                     results.add(line);
                 }
 
@@ -31,39 +30,38 @@ public class Main {
 
         public void writeLinesToCSVFile(String path, String... lines) throws IOException {
             Path filePath = Paths.get(path);
-            try(BufferedWriter buffer =
-                        Files.newBufferedWriter(filePath,
-                                Charset.defaultCharset(),
-                                StandardOpenOption.APPEND)){
-                for(String line:lines){
+            try (BufferedWriter buffer = Files.newBufferedWriter(filePath,
+                    Charset.defaultCharset(),
+                    StandardOpenOption.APPEND)) {
+                for (String line : lines) {
                     buffer.append(line);
                     buffer.newLine();
                 }
             }
         }
     }
+
     public static void main(String[] args) throws IOException {
-        String dirPath="/app/data/batch";
-        String filePathStr="/app/data/batch/database.csv";
-        while(true){
+        String dirPath = "C:\\Users\\5aleda4rf\\IdeaProjects\\students_registration_system\\app\\data\\batch";
+        String filePathStr = "C:\\Users\\5aleda4rf\\IdeaProjects\\students_registration_system\\app\\data\\batch\\database.csv";
+        while (true) {
             System.out.println("1- Add student data\n" +
                     "2- Add batch students data\n" +
                     "3- Exit");
 
             Scanner input = new Scanner(System.in);
-            int choice=input.nextInt();
-            if(choice==1){
+            int choice = input.nextInt();
+            if (choice == 1) {
                 System.out.println("Enter the data in the following order (NAME, ID, COURSES)");
-                String name,courses,id;
+                String name, courses, id;
                 input.nextLine();
-                name= input.nextLine();
-                id=input.nextLine();
-                courses= input.nextLine();
+                name = input.nextLine();
+                id = input.nextLine();
+                courses = input.nextLine();
                 new CSVFileHelper().writeLinesToCSVFile(filePathStr,
-                        name+","+id+","+courses);
+                        name + "," + id + "," + courses);
                 System.out.println(courses);
-            }
-            else if(choice==2){
+            } else if (choice == 2) {
                 File dir = new File(dirPath);
                 String[] children = dir.list();
                 assert children != null;
@@ -72,29 +70,27 @@ public class Main {
                     if (child.contains("verified"))
                         System.out.println(child);
                 System.out.println("Enter 'Yes' if you want choose one of these files, otherwise 'No'");
-                String checkApprove= input.next();
-                if(checkApprove.equalsIgnoreCase("yes")){
+                String checkApprove = input.next();
+                if (checkApprove.equalsIgnoreCase("yes")) {
                     System.out.print("Enter File Name: ");
-                    String fileName= input.next();
-                    String filePath=dirPath+"/"+fileName;
+                    String fileName = input.next();
+                    String filePath = dirPath + "/" + fileName;
                     System.out.println(filePath);
-                    List<String> list=new CSVFileHelper().readLinesFromCSVFile(filePath);
+                    List<String> list = new CSVFileHelper().readLinesFromCSVFile(filePath);
                     for (String line : list) {
                         new CSVFileHelper().writeLinesToCSVFile(filePathStr,
                                 line);
                     }
-                    System.out.println("Data Added Successfully From "+fileName+" to database.csv");
+                    System.out.println("Data Added Successfully From " + fileName + " to database.csv");
                 }
-            }
-            else if(choice==3){
+            } else if (choice == 3) {
                 System.out.println("System closed Successfully.");
                 break;
-            }
-            else{
+            } else {
                 System.out.println("This number not valid .. Enter correct number!");
             }
         }
-        List<String> list=new CSVFileHelper().readLinesFromCSVFile(filePathStr);
+        List<String> list = new CSVFileHelper().readLinesFromCSVFile(filePathStr);
         System.out.println(list.get(3));
     }
 }
