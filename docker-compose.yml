@@ -18,3 +18,5 @@ services:
     tty: true
 
 
+volumes:
+  C:\Users\5aleda4rf\IdeaProjects\students_registration_system\app\data\batch:
