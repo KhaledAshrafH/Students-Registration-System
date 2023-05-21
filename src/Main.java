@@ -42,7 +42,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-
+        String dirPath = "/app/data/batch";
+        String filePathStr = "/app/data/batch/database.csvg";
         while (true) {
             System.out.println("1- Add student data\n" +
                     "2- Add batch students data\n" +
