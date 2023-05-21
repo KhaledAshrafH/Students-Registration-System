@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and push
         run: |
-          docker buildx bake -f ./docker-compose.yml student-statistics-process registeration-process --push
+          docker buildx bake -f ./docker-compose.yml default --push
 
       - name: Run docker compose (Test)
         uses: isbang/compose-action@v1.4.1
