@@ -33,4 +33,13 @@ jobs:
       - name: Build and run docker-compose
         run: |
           docker-compose up -d
-
+          
+      - name: Setup JDK 19
+        uses: actions/setup-java@v2
+        with:
+          java-version: '19'
+          distribution: 'temurin'
+      - name: Run java code
+        uses: actions/script@v0.1.0
+        with:
+          script: java Main
