@@ -1,5 +1,3 @@
-# Khaled Ashraf  => 20190186
-# Samah Moustafa => 20190248
 
 FROM openjdk:19
 COPY . /usr/src/myapp

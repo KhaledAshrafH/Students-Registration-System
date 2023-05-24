@@ -1,22 +1,27 @@
 version: "3.9"
+
 services:
   student-statistics-process:
-    image: 5aleda4rf/student-statistics-process
+    build: .
+    image: 5aleda4rf/student-statistics-process:latest
 #    volumes:
-#      - C:/Users/5aleda4rf/IdeaProjects/students_registration_system/app/data/batch:/app/data/batch
+#      - C:\Users\5aleda4rf\IdeaProjects\data:/app/data/batch
     ports:
       - "80:80"
     stdin_open: true
     tty: true
+
   registeration-process:
-    image: 5aleda4rf/registeration-process
+    build: .
+    image: 5aleda4rf/registeration-process:latest
 #    volumes:
-#      - C:/Users/5aleda4rf/IdeaProjects/students_registration_system/app/data/batch:/app/data/batch
+#      - C:\Users\5aleda4rf\IdeaProjects\data:/app/data/batch
     ports:
       - "81:81"
     stdin_open: true
     tty: true
 
 
-# Note:- Volumes Commented,
-#     to pull image from my dockerHub with shared mounted folder without any problem related with fixed local folder path
+# Note:- Volumes Commented, in GitHub because you need to define the local path.
+# If you download this file in your pc, only uncomment this and put your local path to mount it and run
+# Like This:- Your Local Path:/app/data/batch
