@@ -1,6 +1,5 @@
 import java.io.BufferedWriter;
 import java.io.File;
-import java.lang.reflect.Array;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -42,8 +41,8 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        String dirPath = "C:\\Users\\5aleda4rf\\IdeaProjects\\students_registration_system\\app\\data\\batch";
-        String filePathStr = "C:\\Users\\5aleda4rf\\IdeaProjects\\students_registration_system\\app\\data\\batch\\database.csv";
+        String dirPath = "/app/data/batch";
+        String filePathStr = "/app/data/batch/database.csv";
         while (true) {
             System.out.println("1- Add student data\n" +
                     "2- Add batch students data\n" +
@@ -87,10 +86,8 @@ public class Main {
                 System.out.println("System closed Successfully.");
                 break;
             } else {
-                System.out.println("This number not valid ... Enter correct number!");
+                System.out.println("This number not valid .. Enter correct number!");
             }
         }
-        List<String> list = new CSVFileHelper().readLinesFromCSVFile(filePathStr);
-        System.out.println(list.get(3));
     }
 }
