@@ -23,6 +23,6 @@ services:
 
 
 
-# Note:- Volumes Notes, 
+# Volumes Notes:-
 # If you download this file in your pc, only put your local path instead of "./data" to mount it and run
 # Like This:- Your Local Path:/app/data/batch
