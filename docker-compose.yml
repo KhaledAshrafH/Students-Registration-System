@@ -23,7 +23,7 @@ services:
 
 
 
-# Note:- Volumes Commented, in GitHub because you need to define the local path.
-# If you download this file in your pc, only uncomment this and put your local path to mount it and run
+# Note:- Volumes Notes, 
+# If you download this file in your pc, only put your local path instead of "./data" to mount it and run
 # Like This:- Your Local Path:/app/data/batch
 
