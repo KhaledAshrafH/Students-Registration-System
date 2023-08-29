@@ -113,7 +113,7 @@ By following these steps, you can deploy and utilize the Student Registration Su
 
 ## Contributing
 
-Contributions to the Fuzzy Logic Toolbox are welcome. If you would like to contribute, please follow these steps:
+Contributions to the system are welcome. If you would like to contribute, please follow these steps:
 
 1. Fork the repository on GitHub.
 
