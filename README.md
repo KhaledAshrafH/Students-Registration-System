@@ -108,7 +108,7 @@ To run the Docker Compose file and deploy the subsystem, follow these steps:
     java Main
     ```
 
-By following these steps, you can deploy and utilize the Student Registration System subsystem, incorporating CI/CD practices and Docker containerization concepts.
+By following these steps, you can deploy and utilize the Student Registration Subsystem, incorporating CI/CD practices and Docker containerization concepts.
 
 
 ## Contributing
